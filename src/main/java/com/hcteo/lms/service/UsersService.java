@@ -14,7 +14,7 @@ public class UsersService {
 
     @Autowired
     private UsersRepository usersRepository;
-    private UserLoginService userLoginService;
+    // private UserLoginService userLoginService;
 
     // create
     public Users createUser(Users users) {
