@@ -14,16 +14,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Users {
+
+public class UserLogin {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long login_id;
     private Long user_id;
-    private String name;
-    private String password;
-    private String address;
-    private String mobileNumber;
-    private String emailAddress;
-    private String role;
-    private Long status;
+    private String timeLogin;
 }

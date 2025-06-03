@@ -14,6 +14,7 @@ public class UsersService {
 
     @Autowired
     private UsersRepository usersRepository;
+    private UserLoginService userLoginService;
 
     // create
     public Users createUser(Users users) {
@@ -45,5 +46,14 @@ public class UsersService {
     // delete by id
     public void deleteUserById(Long id) {
         usersRepository.deleteById(id);
+    }
+
+    // get by email password
+    public Users getUserByEmailPassword(String email, String password) {
+        return usersRepository.findUserByEmailPassword(email, password);
+        // if (email.equals(user.getEmailAddress())) {
+        //     userLoginService.insertUserLogin(user.getUser_id());
+        // }
+
     }
 }
