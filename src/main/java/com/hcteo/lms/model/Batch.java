@@ -14,16 +14,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Users {
+public class Batch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
-    private String name;
-    private String password;
-    private String address;
-    private String mobileNumber;
-    private String emailAddress;
-    private String role;
+    private Long batch_id;
+    private String batchCreatedDate;
+    private String batchCollectedDate;
     private Long status;
 }

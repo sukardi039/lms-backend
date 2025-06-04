@@ -26,12 +26,12 @@ public class BooksService {
     }
 
     // get book by ID
-    public Optional<Books> getBookById(String id) {
+    public Optional<Books> getBookById(Long id) {
         return booksRepository.findById(id);
     }
 
     // update
-    public Books updateBook(String id, Books book) {
+    public Books updateBook(Long id, Books book) {
         Books originalBook = booksRepository.findById(id).orElseThrow();
         originalBook.setIsbn(book.getIsbn());
         originalBook.setTitle(book.getTitle());
@@ -44,7 +44,12 @@ public class BooksService {
     }
 
     // delete by id
-    public void deleteBook(String id) {
+    public void deleteBook(Long id) {
         booksRepository.deleteById(id);
+    }
+
+    // get category
+    public List<String> getCategory() {
+        return booksRepository.getCategoryList();
     }
 }

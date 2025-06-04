@@ -19,7 +19,7 @@ public class BorrowedBooks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long borrow_id;
-    private String book_id;
+    private Long book_id;
     private Long user_id;
     private String borrowedDate;
     private String returnDate;
