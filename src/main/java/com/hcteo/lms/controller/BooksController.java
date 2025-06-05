@@ -61,8 +61,8 @@ public class BooksController {
         return booksService.getCategory();
     }
 
-    // @GetMapping("/available/{id}")
-    // public List<Books> getBooksAvailable() {
-    //     return booksService.getAvailable();
-    // }
+    @GetMapping("/borrowed/{id}")
+    public List<Books> borrowedByUser(@PathVariable Long id) {
+        return booksService.borrowedBooksByUser(id);
+    }
 }

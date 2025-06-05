@@ -52,4 +52,9 @@ public class BooksService {
     public List<String> getCategory() {
         return booksRepository.getCategoryList();
     }
+
+    // borrowed by user
+    public List<Books> borrowedBooksByUser(Long id) {
+        return booksRepository.borrowedBooksByUser(id);
+    }
 }
