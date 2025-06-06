@@ -1,5 +1,7 @@
 package com.hcteo.lms.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,4 +28,8 @@ public class BorrowedBooks {
     private String actualReturnDate;
     private String status;
     private Long batch_id;
+    private Long overdue;
+    private BigDecimal Penelty;
+    private BigDecimal PeneltyPaid;
+
 }

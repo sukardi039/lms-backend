@@ -2,6 +2,7 @@ package com.hcteo.lms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,5 +31,11 @@ public class BorrowedBooksController {
     @PutMapping("/return/{id}/{bd}")
     public BorrowedBooks returnBook(@PathVariable Long id, @PathVariable Long bd, @RequestBody BorrowedBooks rt) {
         return borrowedBooksService.returnBook(id, bd, rt);
+    }
+
+    // get record
+    @GetMapping("/{id}/{bd}")
+    public BorrowedBooks getBorrowRecord(@PathVariable Long id, @PathVariable Long bd) {
+        return borrowedBooksService.getBorrowRecord(id, bd);
     }
 }
