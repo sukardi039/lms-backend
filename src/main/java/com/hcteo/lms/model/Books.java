@@ -26,4 +26,5 @@ public class Books {
     private String bookImage;
     private int publishedYear;
     private int copyInStock;
+    private String anything;
 }

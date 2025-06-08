@@ -57,4 +57,19 @@ public class BooksService {
     public List<Books> borrowedBooksByUser(Long id) {
         return booksRepository.borrowedBooksByUser(id);
     }
+
+    // overdue by user
+    public List<Books> overdueByUser(Long id) {
+        return booksRepository.overdueBooksByUser(id);
+    }
+
+    // outstanding by user
+    public List<Books> outstandingByUser(Long id) {
+        return booksRepository.outstandingByUser(id);
+    }
+
+    // renew by user
+    public List<Books> renewByUser(Long id) {
+        return booksRepository.renewBooksByUser(id);
+    }
 }

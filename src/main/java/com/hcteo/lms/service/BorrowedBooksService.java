@@ -2,6 +2,7 @@ package com.hcteo.lms.service;
 
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,16 +37,37 @@ public class BorrowedBooksService {
         return borrowedBooksRepository.getBorrowRecord(user_id, book_id);
     }
 
+    // get borrow record by ID
+    public Optional<BorrowedBooks> getById(Long id) {
+        return borrowedBooksRepository.findById(id);
+    }
+
+    // get borrow record
+    public BorrowedBooks getRenewableRecord(Long user_id, Long book_id) {
+        return borrowedBooksRepository.getRenewableRecord(user_id, book_id);
+    }
+
     // return book
-    public BorrowedBooks returnBook(Long user_id, Long book_id, BorrowedBooks returnBook) {
-        BorrowedBooks book = getBorrowRecord(user_id, book_id);
-        if (Objects.equals(book.getUser_id(), user_id) && Objects.equals(book.getBook_id(), book_id)) {
+    public BorrowedBooks returnBook(Long borrow_id, BorrowedBooks returnBook) {
+        BorrowedBooks book = getById(borrow_id).orElseThrow();
+        if (Objects.equals(book.getBorrow_id(), borrow_id)) {
             book.setActualReturnDate(returnBook.getActualReturnDate());
             book.setOverdue(returnBook.getOverdue());
             if (returnBook.getOverdue() > 0) {
                 BigDecimal penelty = borrowedBooksRepository.penelty(returnBook.getOverdue());
                 book.setPenelty(penelty);
             }
+            return borrowedBooksRepository.save(book);
+        }
+        return book;
+    }
+
+    // renew book
+    public BorrowedBooks renewBook(Long borrow_id, BorrowedBooks renewBook) {
+        BorrowedBooks book = getById(borrow_id).orElseThrow();
+        if (Objects.equals(book.getBorrow_id(), borrow_id)) {
+            book.setReturnDate(renewBook.getReturnDate());
+            book.setRenewed(renewBook.getRenewed());
             return borrowedBooksRepository.save(book);
         }
         return book;

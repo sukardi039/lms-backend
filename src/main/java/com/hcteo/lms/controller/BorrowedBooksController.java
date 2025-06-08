@@ -28,14 +28,26 @@ public class BorrowedBooksController {
     }
 
     // return book
-    @PutMapping("/return/{id}/{bd}")
-    public BorrowedBooks returnBook(@PathVariable Long id, @PathVariable Long bd, @RequestBody BorrowedBooks rt) {
-        return borrowedBooksService.returnBook(id, bd, rt);
+    @PutMapping("/return/{id}")
+    public BorrowedBooks returnBook(@PathVariable Long id, @RequestBody BorrowedBooks rt) {
+        return borrowedBooksService.returnBook(id, rt);
+    }
+
+    // return book
+    @PutMapping("/renew/{id}")
+    public BorrowedBooks renewBook(@PathVariable Long id, @RequestBody BorrowedBooks rt) {
+        return borrowedBooksService.renewBook(id, rt);
     }
 
     // get record
     @GetMapping("/{id}/{bd}")
     public BorrowedBooks getBorrowRecord(@PathVariable Long id, @PathVariable Long bd) {
         return borrowedBooksService.getBorrowRecord(id, bd);
+    }
+
+    // get renewable
+    @GetMapping("/renewable/{id}/{bd}")
+    public BorrowedBooks getRenewableRecord(@PathVariable Long id, @PathVariable Long bd) {
+        return borrowedBooksService.getRenewableRecord(id, bd);
     }
 }

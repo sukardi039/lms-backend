@@ -26,6 +26,7 @@ public class BorrowedBooks {
     private String borrowedDate;
     private String returnDate;
     private String actualReturnDate;
+    private Long renewed;
     private String status;
     private Long batch_id;
     private Long overdue;

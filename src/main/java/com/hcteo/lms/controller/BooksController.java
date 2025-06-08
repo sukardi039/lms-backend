@@ -65,4 +65,19 @@ public class BooksController {
     public List<Books> borrowedByUser(@PathVariable Long id) {
         return booksService.borrowedBooksByUser(id);
     }
+
+    @GetMapping("/overdue/{id}")
+    public List<Books> overdueByUser(@PathVariable Long id) {
+        return booksService.overdueByUser(id);
+    }
+
+    @GetMapping("/outstanding/{id}")
+    public List<Books> outstandingByUser(@PathVariable Long id) {
+        return booksService.outstandingByUser(id);
+    }
+
+    @GetMapping("/renew/{id}")
+    public List<Books> renewByUser(@PathVariable Long id) {
+        return booksService.renewByUser(id);
+    }
 }

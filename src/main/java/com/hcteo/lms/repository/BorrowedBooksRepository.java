@@ -31,4 +31,7 @@ public interface BorrowedBooksRepository extends JpaRepository<BorrowedBooks, Lo
 
     @Query(value = "select exceeded from user_exceed_penelty WHERE user_id = ?1", nativeQuery = true)
     Long getExceedPenelty(Long user_id);
+
+    @Query(value = "select * from borrowed_books WHERE book_id = ?2 and user_id = ?1 and actual_return_date is null and return_date > now() and renewed is null limit 1", nativeQuery = true)
+    BorrowedBooks getRenewableRecord(Long user_id, Long book_id);
 }
