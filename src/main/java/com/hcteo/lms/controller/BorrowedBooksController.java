@@ -33,10 +33,16 @@ public class BorrowedBooksController {
         return borrowedBooksService.returnBook(id, rt);
     }
 
-    // return book
+    // renew book
     @PutMapping("/renew/{id}")
     public BorrowedBooks renewBook(@PathVariable Long id, @RequestBody BorrowedBooks rt) {
         return borrowedBooksService.renewBook(id, rt);
+    }
+
+    // pay penelty
+    @PutMapping("/pay/{id}")
+    public BorrowedBooks payPenelty(@PathVariable Long id) {
+        return borrowedBooksService.payPenelty(id);
     }
 
     // get record

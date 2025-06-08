@@ -68,6 +68,11 @@ public class BooksService {
         return booksRepository.outstandingByUser(id);
     }
 
+    // all outstanding
+    public List<Books> allOutstanding() {
+        return booksRepository.allOutstanding();
+    }
+
     // renew by user
     public List<Books> renewByUser(Long id) {
         return booksRepository.renewBooksByUser(id);

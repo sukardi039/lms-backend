@@ -73,6 +73,16 @@ public class BorrowedBooksService {
         return book;
     }
 
+    // pay penelty
+    public BorrowedBooks payPenelty(Long borrow_id) {
+        BorrowedBooks book = getById(borrow_id).orElseThrow();
+        if (Objects.equals(book.getBorrow_id(), borrow_id)) {
+            book.setPeneltyPaid(book.getPenelty());
+            return borrowedBooksRepository.save(book);
+        }
+        return book;
+    }
+
     // get availability
     public Long getAvailable(Long book_id) {
         return borrowedBooksRepository.getAvailability(book_id);

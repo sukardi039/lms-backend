@@ -76,6 +76,11 @@ public class BooksController {
         return booksService.outstandingByUser(id);
     }
 
+    @GetMapping("/outstanding")
+    public List<Books> allOutstanding() {
+        return booksService.allOutstanding();
+    }
+
     @GetMapping("/renew/{id}")
     public List<Books> renewByUser(@PathVariable Long id) {
         return booksService.renewByUser(id);
