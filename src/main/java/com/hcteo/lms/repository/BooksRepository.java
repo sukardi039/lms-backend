@@ -24,7 +24,7 @@ public interface BooksRepository extends JpaRepository<Books, Long> {
     @Query(value = "SELECT b.book_id book_id, isbn, title, author, category, book_image, published_year, copy_in_stock, concat(penelty,'^',borrow_id,'^',name) anything FROM borrowed_books r, books b, users u WHERE b.book_id = r.book_id and r.user_id = u.user_id and actual_return_date is not null and penelty > 0 and penelty_paid is null", nativeQuery = true)
     List<Books> allOutstanding();
 
-    @Query(value = "SELECT b.book_id book_id, isbn, title, author, category, book_image, published_year, copy_in_stock, return_date anything FROM borrowed_books r, books b WHERE b.book_id = r.book_id and user_id = ?1 and actual_return_date is null and return_date > now() and renewed is null", nativeQuery = true)
+    @Query(value = "SELECT b.book_id book_id, isbn, title, author, category, book_image, published_year, copy_in_stock, return_date anything FROM borrowed_books r, books b WHERE b.book_id = r.book_id and user_id = ?1 and actual_return_date is null and return_date > now() and renewed < (select value_long from param where param_key = 'MAX_RENEWAL')", nativeQuery = true)
     List<Books> renewBooksByUser(Long user_id);
 
 }
