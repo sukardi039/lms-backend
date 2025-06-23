@@ -1,3 +1,24 @@
+/**
+ * Repository interface for managing {@link com.hcteo.lms.model.Books} entities.
+ * Provides custom queries for retrieving book categories, borrowed books,
+ * overdue books, outstanding penalties, and renewable books for users.
+ *
+ * Methods:
+ * <ul>
+ * <li>{@link #getCategoryList()} - Retrieves a list of all book
+ * categories.</li>
+ * <li>{@link #borrowedBooksByUser(Long)} - Retrieves a list of books currently
+ * borrowed by a specific user.</li>
+ * <li>{@link #overdueBooksByUser(Long)} - Retrieves a list of overdue books for
+ * a specific user.</li>
+ * <li>{@link #outstandingByUser(Long)} - Retrieves a list of books with
+ * outstanding penalties for a specific user.</li>
+ * <li>{@link #allOutstanding()} - Retrieves a list of all books with
+ * outstanding penalties across all users.</li>
+ * <li>{@link #renewBooksByUser(Long)} - Retrieves a list of books eligible for
+ * renewal by a specific user.</li>
+ * </ul>
+ */
 package com.hcteo.lms.repository;
 
 import java.util.List;

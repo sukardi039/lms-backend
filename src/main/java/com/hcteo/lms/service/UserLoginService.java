@@ -1,3 +1,7 @@
+/**
+ * Service class for managing user login operations.
+ * Provides methods to create, insert, and retrieve user login records.
+ */
 package com.hcteo.lms.service;
 
 import java.util.List;

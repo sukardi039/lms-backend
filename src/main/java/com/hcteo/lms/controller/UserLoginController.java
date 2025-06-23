@@ -14,6 +14,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hcteo.lms.model.UserLogin;
 import com.hcteo.lms.service.UserLoginService;
 
+/**
+ * REST controller for managing user login records.
+ * <p>
+ * Provides endpoints to create user login records, retrieve all user login
+ * records, retrieve login records by user ID, and insert a login record for a
+ * specific user.
+ * </p>
+ *
+ * <ul>
+ * <li><b>POST /api/userlogins</b> - Create a new user login record.</li>
+ * <li><b>GET /api/userlogins</b> - Retrieve all user login records.</li>
+ * <li><b>GET /api/userlogins/{id}</b> - Retrieve login records by user ID.</li>
+ * <li><b>POST /api/userlogins/{userid}</b> - Insert a login record for a
+ * specific user.</li>
+ * </ul>
+ *
+ * <p>
+ * Cross-origin requests are allowed from any origin.
+ * </p>
+ *
+ * @author [Your Name]
+ */
 @RestController
 @RequestMapping("/api/userlogins")
 @CrossOrigin(origins = "*")

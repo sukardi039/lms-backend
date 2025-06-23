@@ -1,3 +1,26 @@
+/**
+ * Repository interface for managing BorrowedBooks entities and related queries.
+ * Provides custom native SQL queries for book borrowing, returning, availability, penalties, and renewals.
+ *
+ * Methods:
+ * <ul>
+ * <li>{@link #returnBook(Long, Long, String)}: Updates the actual return date
+ * for a borrowed book by a user.</li>
+ * <li>{@link #getBorrowRecord(Long, Long)}: Retrieves the current borrow record
+ * for a user and book where the book has not yet been returned.</li>
+ * <li>{@link #getAvailability(Long)}: Gets the availability count for a
+ * specific book.</li>
+ * <li>{@link #getQuotaAvailability(Long)}: Gets the quota availability for a
+ * specific user.</li>
+ * <li>{@link #penelty(Long)}: Calculates the penalty for overdue books based on
+ * the number of days, with a maximum cap.</li>
+ * <li>{@link #getOverdue(Long)}: Retrieves the overdue status for a user.</li>
+ * <li>{@link #getExceedPenelty(Long)}: Checks if a user has exceeded the
+ * penalty limit.</li>
+ * <li>{@link #getRenewableRecord(Long, Long)}: Retrieves a borrow record
+ * eligible for renewal for a user and book.</li>
+ * </ul>
+ */
 package com.hcteo.lms.repository;
 
 import java.math.BigDecimal;

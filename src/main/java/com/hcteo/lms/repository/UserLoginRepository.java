@@ -1,3 +1,20 @@
+/**
+ * Repository interface for managing {@link UserLogin} entities.
+ * <p>
+ * Provides methods to interact with the user_login table, including retrieving
+ * login records by user ID and recording new login events.
+ * </p>
+ *
+ * <ul>
+ * <li> {@link #findByUserId(Long)}: Retrieves a list of {@link UserLogin}
+ * entries for a specific user, ordered by login time in descending order.
+ * </li>
+ * <li> {@link #keepLogin(Long)}: Inserts a new login record for the specified
+ * user with the current timestamp. <b>Note:</b> Using a modifying query with a
+ * select method signature is not standard and may cause runtime issues.
+ * </li>
+ * </ul>
+ */
 package com.hcteo.lms.repository;
 
 import java.util.List;

@@ -1,3 +1,24 @@
+/**
+ * Service class for managing borrowed books in the LMS application.
+ * Provides methods for creating borrow records, returning and renewing books,
+ * paying penalties, and checking book/user availability and quotas.
+ *
+ * <p>
+ * Core responsibilities include:</p>
+ * <ul>
+ * <li>Creating new borrow records with business rule checks (availability,
+ * quota, overdue, penalty).</li>
+ * <li>Fetching borrow records by user, book, or ID.</li>
+ * <li>Handling book returns, including overdue and penalty calculation.</li>
+ * <li>Renewing borrowed books and updating relevant fields.</li>
+ * <li>Processing penalty payments for overdue books.</li>
+ * <li>Checking book availability and user quota for borrowing.</li>
+ * </ul>
+ *
+ * <p>
+ * Relies on {@link BorrowedBooksRepository} for data access and custom
+ * queries.</p>
+ */
 package com.hcteo.lms.service;
 
 import java.math.BigDecimal;

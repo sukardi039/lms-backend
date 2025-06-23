@@ -1,3 +1,8 @@
+/**
+ * Service class for managing Books in the LMS application.
+ * Provides methods for creating, retrieving, updating, and deleting books,
+ * as well as various queries related to book borrowing, overdue, outstanding, and renewal status.
+ */
 package com.hcteo.lms.service;
 
 import java.util.List;

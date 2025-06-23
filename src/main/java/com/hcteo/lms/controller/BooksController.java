@@ -17,6 +17,34 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hcteo.lms.model.Books;
 import com.hcteo.lms.service.BooksService;
 
+/**
+ * REST controller for managing books in the library management system. Provides
+ * endpoints for CRUD operations, category retrieval, and user-specific book
+ * queries.
+ *
+ * Endpoints:
+ * <ul>
+ * <li>POST /api/books - Create a new book</li>
+ * <li>GET /api/books - Retrieve all books</li>
+ * <li>GET /api/books/{id} - Retrieve a book by its ID</li>
+ * <li>PUT /api/books/{id} - Update a book by its ID</li>
+ * <li>DELETE /api/books/{id} - Delete a book by its ID</li>
+ * <li>GET /api/books/category - Retrieve all book categories</li>
+ * <li>GET /api/books/borrowed/{id} - Retrieve books borrowed by a specific
+ * user</li>
+ * <li>GET /api/books/overdue/{id} - Retrieve overdue books for a specific
+ * user</li>
+ * <li>GET /api/books/outstanding/{id} - Retrieve outstanding books for a
+ * specific user</li>
+ * <li>GET /api/books/outstanding - Retrieve all outstanding books</li>
+ * <li>GET /api/books/renew/{id} - Retrieve books eligible for renewal by a
+ * specific user</li>
+ * </ul>
+ *
+ * Cross-origin requests are allowed from any origin.
+ *
+ * @author [Your Name]
+ */
 @RestController
 @RequestMapping("/api/books")
 @CrossOrigin(origins = "*")

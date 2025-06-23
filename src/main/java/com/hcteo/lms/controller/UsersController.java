@@ -1,3 +1,20 @@
+/**
+ * Controller for managing Users in the LMS application.
+ * Provides REST endpoints for creating, retrieving, updating, deleting users, and login check.
+ *
+ * Endpoints:
+ * <ul>
+ * <li>POST /api/users - Create a new user</li>
+ * <li>GET /api/users - Retrieve all users</li>
+ * <li>GET /api/users/{id} - Retrieve a user by ID</li>
+ * <li>PUT /api/users/{id} - Update a user by ID</li>
+ * <li>DELETE /api/users/{id} - Delete a user by ID</li>
+ * <li>GET /api/users/em/{email}/pw/{password} - Login check by email and
+ * password</li>
+ * </ul>
+ *
+ * Cross-origin requests are allowed from any origin.
+ */
 package com.hcteo.lms.controller;
 
 import java.util.List;

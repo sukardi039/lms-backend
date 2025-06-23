@@ -1,3 +1,17 @@
+/**
+ * Entity representing a user login record.
+ * Stores information about each login event, including the login ID,
+ * associated user ID, and the time of login.
+ *
+ * Fields:
+ * <ul>
+ * <li>login_id - Unique identifier for the login event (primary key).</li>
+ * <li>user_id - Identifier of the user who logged in.</li>
+ * <li>timeLogin - Timestamp of when the login occurred.</li>
+ * </ul>
+ *
+ * Uses Lombok annotations for boilerplate code generation.
+ */
 package com.hcteo.lms.model;
 
 import jakarta.persistence.Entity;

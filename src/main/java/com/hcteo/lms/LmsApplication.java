@@ -1,3 +1,9 @@
+/**
+ * The entry point for the Learning Management System (LMS) Spring Boot application.
+ * <p>
+ * This class bootstraps the application using {@link SpringApplication}.
+ * </p>
+ */
 package com.hcteo.lms;
 
 import org.springframework.boot.SpringApplication;

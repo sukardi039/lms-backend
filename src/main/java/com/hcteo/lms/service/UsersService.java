@@ -1,3 +1,24 @@
+/**
+ * Service class for managing Users entities.
+ * Provides methods for creating, retrieving, updating, and deleting users,
+ * as well as authentication-related operations.
+ *
+ * <p>
+ * Methods:</p>
+ * <ul>
+ * <li>{@link #createUser(Users)} - Creates and saves a new user.</li>
+ * <li>{@link #getAllUsers()} - Retrieves all users from the repository.</li>
+ * <li>{@link #getUserById(Long)} - Retrieves a user by their unique ID.</li>
+ * <li>{@link #updateUser(Long, Users)} - Updates an existing user's
+ * details.</li>
+ * <li>{@link #deleteUserById(Long)} - Deletes a user by their unique ID.</li>
+ * <li>{@link #getUserByEmailPassword(String, String)} - Retrieves a user by
+ * email and password.</li>
+ * </ul>
+ *
+ * <p>
+ * This service uses {@link UsersRepository} for data access operations.</p>
+ */
 package com.hcteo.lms.service;
 
 import java.util.List;

@@ -1,3 +1,23 @@
+/**
+ * Controller for managing borrowed books operations in the LMS system.
+ * Provides endpoints for creating, returning, renewing, and paying penalties for borrowed books,
+ * as well as retrieving borrow records and renewable records.
+ *
+ * Endpoints:
+ * <ul>
+ * <li>POST /api/borrowedbooks - Create a new borrowed book record.</li>
+ * <li>PUT /api/borrowedbooks/return/{id} - Return a borrowed book.</li>
+ * <li>PUT /api/borrowedbooks/renew/{id} - Renew a borrowed book.</li>
+ * <li>PUT /api/borrowedbooks/pay/{id} - Pay penalty for a borrowed book.</li>
+ * <li>GET /api/borrowedbooks/{id}/{bd} - Get a specific borrow record.</li>
+ * <li>GET /api/borrowedbooks/renewable/{id}/{bd} - Get a renewable borrow
+ * record.</li>
+ * </ul>
+ *
+ * Cross-origin requests are allowed from any origin.
+ *
+ * @author
+ */
 package com.hcteo.lms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
